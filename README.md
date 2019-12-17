@@ -26,3 +26,8 @@ Run the following command to run startup migrations.
 ```js
 adonis migration:run
 ```
+
+
+### Observations
+
+This project was created to study better adonis framework, all of this project was get on site https://rocketseat.com.br/, best plataform to study mainly Js using Adonis Framework and React, React Native.
