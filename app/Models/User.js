@@ -21,11 +21,41 @@ class User extends Model {
 		});
 	}
 
+	teamJoins() {
+		return this.hasMany('App/Models/UserTeam');
+	}
+
 	tokens() {
 		return this.hasMany('App/Models/Token');
 	}
 	teams() {
 		return this.belongsToMany('App/Models/Team').pivotModel('App/Models/UserTeam');
+	}
+
+	//Nesta parte do codigo sera feita a sobrescrita dos metodos que o adonis Acl utiliza
+	//para verificar se o user tem permissao ou nao
+
+	async is(expression) {
+		const team = await this.teamJoins()
+			.where('team_id', this.currentTeam)
+			.first();
+
+		return team.is(expression);
+	}
+	async can(expression) {
+		const team = await this.teamJoins()
+			.where('team_id', this.currentTeam)
+			.first();
+
+		return team.can(expression);
+	}
+
+	async scope(required) {
+		const team = await this.teamJoins()
+			.where('team_id', this.currentTeam)
+			.first();
+
+		return team.scope(required);
 	}
 }
 
