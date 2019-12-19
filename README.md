@@ -1,7 +1,7 @@
 ## This project use adonis framework
 
-![Adonis image](/images/adonis.png)
-Format: ![Alt Text](url)
+![Adonis image](./images/adonis.png)
+
 
 # Adonis API application
 
