@@ -1,6 +1,6 @@
 ## This project use adonis framework
 
-![Adonis image](./images/adonis.png)
+![Adonis image](./images/adonis.jpg)
 
 
 # Adonis API application
